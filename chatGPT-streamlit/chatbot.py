@@ -6,7 +6,13 @@ from dotenv import load_dotenv
 load_dotenv()
 import openai
 
-openai.api_key = os.getenv('OPENAI_API_KEY')
+# openai.api_key = os.getenv('OPENAI_API_KEY')
+
+def get_api_key():
+    input_text = st.text_input(label="OpenAI API Key ",  placeholder="Ex: sk-2twmA8tfCb8un4...", key="openai_api_key_input")
+    return input_text
+
+openai_api_key = get_api_key()
 
 st.title("Chatbot : ChatGPT and Streamlit Chat")
 st.subheader("AI Tutor:")
